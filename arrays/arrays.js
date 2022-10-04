@@ -42,8 +42,17 @@ function merge(arr1, arr2) {
         if (arr2[i]) {
             merged.push(arr2[i]);
         }
-        
     }
+    for(var x = 1; x < merged.length; x++) {
+        var y = x -1;
+        var temp = merged[x];
+        while(y >= 0 && merged[y] > temp) {
+            merged[y + 1] = merged[y];
+            y--
+        }
+        merged[y+1] = temp;
+    }
+    
     return merged;
 }
 var result = merge([4,15,100], [10,20,30,40])
