@@ -21,14 +21,48 @@ function getDigits() {
 getDigits();
 
 // Acronyms
+function firstLetter(word) {
+    return word[0];
+}
 function makeAcronym(str) {
-    var strArr = str.split(' ');
-    var acronym = "";
-    for (var x in strArr) {
-        acronym += x.charAt(0);
-    }
-    return acronym
+    var words = str.split(" ");
+    var acronym = words.map(firstLetter);
+    return acronym.join("").toUpperCase();
 }
 
-var string = makeAcronym("there's no free lunch - gotta pay yer way.")
-console.log(string)
+var str = "there's no free lunch - gotta pay yer way.";
+var acr = makeAcronym(str);
+console.log(acr);
+
+var str2 = "Live from New York, it's Saturday Night!";
+var acr2 = makeAcronym(str2);
+console.log(acr2);
+
+// Zip Arrays into Dictionary
+var keys = ["abc", 3, "yo"];
+var values = [42, "wassup", true];
+function buildMap(keys, values) {
+        var map = new Map();
+        for (var i = 0; i < keys.length; i++) {
+            map.set(keys[i], values[i]);
+        }
+        return map;
+    }
+
+console.log(buildMap(keys, values));
+
+// Invert Hash
+function inverse(obj) {
+    var inverseHash = {};
+    for (var key in obj) {
+        inverseHash[obj[key]] = key;
+    }
+    return inverseHash;
+}
+var obj = {
+    "name": "Zaphod",
+    "charm": "high",
+    "morals": "dicey"
+};
+
+console.log(inverse(obj));
