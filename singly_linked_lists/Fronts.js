@@ -1,0 +1,6 @@
+// Fronts
+class SLL {
+    front() {
+        
+    }
+}
