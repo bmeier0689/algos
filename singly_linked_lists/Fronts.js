@@ -1,6 +1,0 @@
-// Fronts
-class SLL {
-    front() {
-        
-    }
-}
