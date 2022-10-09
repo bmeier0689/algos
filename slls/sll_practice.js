@@ -19,6 +19,15 @@ class LinkedList {
         this.head=new_node;
         return self;
     }
+    findSum() {
+        runner=self.head
+        sum=0
+        while(runner !== null) {
+            sum+=runner.value
+            runner=runner.next
+        }
+        return sum
+    }
 }
 
 
